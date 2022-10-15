@@ -1,10 +1,14 @@
-import styled from "styled-components";
+import styled, { ThemeConsumer } from "styled-components";
 import { colors } from "./variables";
 
 export const Container = styled.div`
-  background-color: ${colors.background};
+  background-color: ${({ theme }) => theme.body};
   min-height: 90vh;
   padding: 0px 15vw;
+
+  @media (max-width: 800px) {
+    padding: 5vw;
+  }
 `;
 
 export const Content = styled.div`
@@ -17,10 +21,13 @@ export const Content = styled.div`
   }
 `;
 
-
 export const Icon = styled.img`
   height: 25px;
   width: 25px;
+`;
+
+export const IconTheme = styled(Icon)`
+  filter: ${({ theme }) => theme.filter}; ;
 `;
 
 export const Button = styled.button`
@@ -40,14 +47,14 @@ export const Box = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background-color: white;
+  background-color: ${({ theme }) => theme.inside};
   border-radius: 5px;
   box-shadow: 4px 4px 20px 0px rgba(0, 0, 0, 0.04);
   padding: 20px;
   width: 48%;
 
   @media (max-width: 800px) {
-    width: 95%;
+    width: 100%;
     margin: 5px;
   }
 `;
@@ -62,10 +69,11 @@ export const Cash = styled.div`
   font-size: 32px;
 `;
 
-/* 
-
-@media (max-width: 800px) {
-  width: 95%;
-  margin: 5px;
-}
-*/
+export const ThemeButton = styled.button`
+  position: absolute;
+  top: 4vh;
+  right: 20px;
+  background-color: inherit;
+  border: none;
+  cursor: pointer;
+`;
