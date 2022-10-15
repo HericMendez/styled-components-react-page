@@ -1,5 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
-
+import { colors } from './UI/variables';
 export const GlobalStyle = createGlobalStyle`
 *{
   box-sizing: border-box;
@@ -7,7 +7,7 @@ export const GlobalStyle = createGlobalStyle`
   margin: 0;
   padding: 0;
   text-decoration: none;
-  color: grey;
+  color: ${colors.text};
 }
 
 `;

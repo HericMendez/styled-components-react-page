@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { colors } from "./variables";
 
 export const Container = styled.div`
-  background-color: #f1f1f1;
+  background-color: ${colors.background};
   min-height: 90vh;
   padding: 0px 15vw;
 `;
@@ -53,7 +53,7 @@ export const Box = styled.div`
 `;
 
 export const Detail = styled.span`
-  color: ${colors.primary}
+  color: ${colors.primary};
   font-size: 24px;
 `;
 
